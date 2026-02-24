@@ -2,22 +2,318 @@
 <html>
   <head>
     <title>Qian Frederic Dai</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
     <style>
-      body{background-color: #e8d5f5;}
-      img {
-        width: 200px;
-        height: 200px;
+
+      /* ========================
+         GENERAL
+      ======================== */
+      body {
+        background-color: #ffffff;
+        font-family: 'Inter', Arial, sans-serif;
+        color: #1a1a1a;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* ========================
+         NAV BAR
+      ======================== */
+      nav {
+        background-color: #ffffff;
+        border-bottom: 1px solid #eeeeee;
+        padding: 20px 60px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+      }
+
+      nav .logo {
+        font-size: 18px;
+        font-weight: 600;
+        color: #1a1a1a;
+      }
+
+      nav ul {
+        list-style: none;
+        display: flex;
+        gap: 30px;
+        margin: 0;
+        padding: 0;
+      }
+
+      nav ul a {
+        text-decoration: none;
+        color: #888888;
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      nav ul a:hover {
+        color: #1a1a1a;
+      }
+
+      /* ========================
+         HERO SECTION
+      ======================== */
+      .hero {
+        text-align: center;
+        padding: 80px 20px 60px;
+        border-bottom: 1px solid #eeeeee;
+      }
+
+      .hero img {
+        width: 120px;
+        height: 120px;
         border-radius: 50%;
         object-fit: cover;
-        border: 4px solid #57068c;
-      }  
+        border: 3px solid #eeeeee;
+        margin-bottom: 24px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+        font-weight: 600;
+        margin: 0 0 10px;
+        color: #1a1a1a;
+      }
+
+      .hero p {
+        font-size: 16px;
+        color: #888888;
+        margin: 0;
+        font-weight: 300;
+      }
+
+      .hero .btn {
+        display: inline-block;
+        margin-top: 24px;
+        padding: 12px 28px;
+        background-color: #1a1a1a;
+        color: white;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        transition: background 0.2s;
+      }
+
+      .hero .btn:hover {
+        background-color: #333333;
+      }
+
+      /* ========================
+         SECTIONS
+      ======================== */
+      .section {
+        max-width: 680px;
+        margin: 0 auto;
+        padding: 60px 20px;
+        border-bottom: 1px solid #eeeeee;
+      }
+
+      .section h2 {
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #888888;
+        margin-bottom: 24px;
+      }
+
+      .section p {
+        font-size: 16px;
+        line-height: 1.8;
+        color: #444444;
+        font-weight: 300;
+      }
+
+      /* ========================
+         EXPERIENCE
+      ======================== */
+      .exp-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 20px 0;
+        border-bottom: 1px solid #f0f0f0;
+      }
+
+      .exp-item:last-child {
+        border-bottom: none;
+      }
+
+      .exp-item .exp-left .role {
+        font-size: 15px;
+        font-weight: 500;
+        color: #1a1a1a;
+        margin-bottom: 4px;
+      }
+
+      .exp-item .exp-left .company {
+        font-size: 14px;
+        color: #888888;
+        font-weight: 300;
+      }
+
+      .exp-item .exp-left .desc {
+        font-size: 14px;
+        color: #aaaaaa;
+        margin-top: 6px;
+        font-weight: 300;
+      }
+
+      .exp-item .date {
+        font-size: 13px;
+        color: #aaaaaa;
+        white-space: nowrap;
+        margin-left: 20px;
+        padding-top: 2px;
+      }
+
+      /* ========================
+         SKILLS
+      ======================== */
+      .skill-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .skill-tag {
+        background-color: #f5f5f5;
+        color: #444444;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 400;
+      }
+
+      /* ========================
+         CONTACT
+      ======================== */
+      .contact-links {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .contact-links a {
+        font-size: 14px;
+        color: #1a1a1a;
+        text-decoration: none;
+        border-bottom: 1px solid #1a1a1a;
+        padding-bottom: 2px;
+        font-weight: 400;
+      }
+
+      .contact-links a:hover {
+        color: #888888;
+        border-color: #888888;
+      }
+
+      /* ========================
+         FOOTER
+      ======================== */
+      footer {
+        text-align: center;
+        padding: 30px;
+        font-size: 13px;
+        color: #cccccc;
+      }
+
     </style>
   </head>
   <body>
-    <h1>Hi, I'm Frederic (Qian)! Welcome to my personal page!</h1>
-    <img src="photo.jpg" alt="Frederic Dai" />
-    
-    <h2>About Me</h2>
-    <p> I love coding, cooking, playing basketball, and relaxing with my guitar. I’m currently deepening my skills in data science and continuously learning new technologies. I’m always excited to explore new ideas, meet new people, and take on new challenges.</p>
+
+    <!-- NAV -->
+    <nav>
+      <div class="logo">Frederic Dai</div>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+      <img src="photo.jpg" alt="Frederic Dai" />
+      <h1>Qian Frederic Dai</h1>
+      <p>Student at New York University · Data Science</p>
+      <a href="#contact" class="btn">Get In Touch</a>
+    </div>
+
+    <!-- ABOUT -->
+    <div class="section" id="about">
+      <h2>About Me</h2>
+      <p>Welcome to my personal page. I'm Frederic — I love coding, playing basketball, and relaxing with my guitar. I'm currently deepening my skills in data science and continuously learning new technologies. I'm always excited to explore new ideas, meet new people, and take on new challenges.</p>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="section" id="experience">
+      <h2>Experience</h2>
+
+      <div class="exp-item">
+        <div class="exp-left">
+          <div class="role">Job Title — Replace Me</div>
+          <div class="company">Company Name</div>
+          <div class="desc">Describe what you did and achieved here.</div>
+        </div>
+        <div class="date">2023 — Now</div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-left">
+          <div class="role">Previous Role</div>
+          <div class="company">Previous Company</div>
+          <div class="desc">Another experience. Add or remove as needed.</div>
+        </div>
+        <div class="date">2021 — 2023</div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-left">
+          <div class="role">Bachelor's Degree</div>
+          <div class="company">New York University</div>
+          <div class="desc">Your field of study and achievements.</div>
+        </div>
+        <div class="date">2020 — 2024</div>
+      </div>
+
+    </div>
+
+    <!-- SKILLS -->
+    <div class="section" id="skills">
+      <h2>Skills</h2>
+      <div class="skill-tags">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Data Science</span>
+        <span class="skill-tag">Add your skill</span>
+        <span class="skill-tag">Add your skill</span>
+        <span class="skill-tag">Add your skill</span>
+      </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div class="section" id="contact">
+      <h2>Contact</h2>
+      <p style="margin-bottom: 20px;">Feel free to reach out — I'm always open to new opportunities and conversations.</p>
+      <div class="contact-links">
+        <a href="mailto:your@email.com">Email</a>
+        <a href="#">LinkedIn</a>
+        <a href="#">GitHub</a>
+        <a href="#">Resume</a>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      Qian Frederic Dai © 2026
+    </footer>
+
   </body>
 </html>
